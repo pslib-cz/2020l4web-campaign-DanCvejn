@@ -33,7 +33,7 @@ body > div {
 video {
     width: 100vw;
     opacity: 1;
-    animation: video .5s 30s forwards linear;
+    animation: video .5s 29s forwards linear;
 }
 
 .background {
@@ -46,7 +46,7 @@ video {
     background-image: none;
     background-size: contain;
     overflow: hidden;
-    animation: background .5s 29.5s forwards linear;
+    animation: background .5s 28.5s forwards linear;
 }
 
 .overlay {
