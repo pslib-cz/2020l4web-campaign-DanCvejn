@@ -1,0 +1,675 @@
+html, body { margin: 0; padding: 0; scroll-behavior: smooth;}
+
+body {
+    background-color: black;
+    font-family: "Overpass";
+}
+
+*:focus {
+    outline: 0px;
+    outline-offset: 0px;
+}
+
+body > div {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+::-moz-progress-bar {
+    display: none;
+}
+
+.video, video {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+video {
+    width: 100vw;
+    opacity: 1;
+    animation: video .5s 30s forwards linear;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-image: none;
+    background-size: contain;
+    overflow: hidden;
+    animation: background .5s 29.5s forwards linear;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #0000007b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: overlay 1s linear forwards;
+    z-index: 10;
+}
+
+.overlay div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.overlay h1 {
+    position: relative;
+    margin: 0;
+    color: white;
+    letter-spacing: 20px;
+    font-size: 7em;
+    text-align: center;
+    font-weight: 700;
+    transform: translateX(-150%);
+    animation: nadpis .5s 1s ease-in forwards;
+}
+
+.overlay h2 {
+    position: relative;
+    margin: 0;
+    color: white;
+    letter-spacing: 5px;
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 400;
+    transform: translateX(-150%);
+    animation: nadpis .5s 6s ease-in forwards;
+}
+
+
+.overlay h1::after {
+    content: "NON_STOP";
+    position: absolute;
+    bottom: -37%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    line-height: 50px;
+    overflow: hidden;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    opacity: 0;
+    animation: stroke1 2.3s 1.8s ease-out forwards alternate 2;
+}
+
+.overlay h1::before {
+    content: "NON_STOP";
+    position: absolute;
+    bottom: -49%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    line-height: 5px;
+    overflow: hidden;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    opacity: 0;
+    animation: stroke2 2.3s 1.8s ease-out forwards alternate 2;
+}
+
+.scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    opacity: 0;
+    transform: translateX(-50%);
+    animation: scroll .3s 3s ease-in forwards;
+}
+
+.scroll img {
+    height: 50px;
+    width: 50px;
+    transform: rotate(-90deg);
+    animation: scroll2 3s 3s ease-in-out infinite;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00000086;
+    transform: translateY(-100%);
+    animation: menu .3s 2s ease-in forwards;
+}
+
+.menu > a {
+    color: white;
+    text-decoration: none;
+    padding: 40px 50px;
+    margin-left: 100px;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    margin-right: 100px;
+}
+
+.menu li {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    list-style: none;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 45px 50px;
+}
+
+.menu a {
+    font-size: 1.5em;
+    position: relative;
+    transition: .3s .2s;
+    z-index: 2;
+    font-weight: 300;
+    -webkit-text-stroke-color: transparent;
+    transform: scale(1);
+}
+
+.menu a::before {
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    width: 0%;
+    height: 2px;
+    content: "";
+    background-color: #ffffff;
+    z-index: -1;
+}
+
+.menu a:hover {
+    font-weight: 900;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1.2px;
+}
+
+.menu a:hover::before {
+    animation: button .5s linear forwards;
+}
+
+
+
+/* Main */
+
+section {
+    max-width: 1500px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+section h2 {
+    color: white;
+    font-size: 4em;
+    padding: 50px 0px;
+    transition: .3s ease-out;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.content img {
+    max-width: 750px;
+    width: 100%;
+}
+
+.content .text {
+    max-width: 750px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content .text p {
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 40px;
+    max-width: 70%;
+}
+
+.orange {
+    font-weight: 700;
+    color: #ff9100;
+}
+
+#preorder .text > .orange {
+    font-weight: 700;
+    color: #ff9100;
+    font-size: 50px;
+    line-height: 10px;
+}
+
+.text a {
+    padding: 15px 60px;
+    background-color: #ff9100;
+    color: black;
+    text-decoration: none;
+    font-size: 30px;
+    border: 1px solid transparent;
+    transition: .4s;
+}
+
+.text a:hover {
+    background-color: transparent;
+    color: white;
+    border: 1px solid #ff9100;
+}
+
+
+/* Footer */
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 15vh;
+}
+
+footer h2 {
+    color: white;
+    font-size: 4em;
+    padding: 50px 0px;
+    transition: .3s ease-out;
+}
+
+.forms {
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.subscribe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form form {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.forms input, .forms textarea {
+    width: 350px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-family: "Overpass";
+    margin: 0;
+    margin-top: 20px;
+    border-bottom: 1px solid #aaaaaa;
+    font-size: 17px;
+}
+
+.forms input:focus {
+    border-bottom: 1px solid white;
+}
+
+.forms textarea {
+    height: 100px;
+}
+
+.forms input::placeholder, .forms textarea::placeholder {
+    color: #aaaaaa;
+    font-family: "Overpass";
+    font-size: 15px;
+}
+
+.forms a {
+    margin-top: 40px;
+    padding: 15px 30px;
+    background-color: #ff9100;
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    border: 1px solid transparent;
+    transition: .4s;
+}
+
+.forms a:hover {
+    background-color: transparent;
+    color: white;
+    border: 1px solid #ff9100;
+}
+
+
+/* Preorder */
+
+.preorder-site {
+    overflow: auto;
+    animation: none;
+}
+
+.preorder-site .overlay {
+    animation: overlay .5s forwards;
+}
+
+.preorder-site .overlay h1::before, .preorder-site .overlay h1::after {
+    display: none;
+    animation: none;
+}
+
+.preorder-site .overlay h1 {
+    animation: nadpis .5s ease-in forwards;
+}
+
+
+.preorder-site .overlay h2 {
+    animation: nadpis .5s .5s ease-in forwards;
+}
+
+.preorder-site .menu {
+    transform: translateY(0%);
+    animation: none;
+}
+
+.preorder-site .scroll {
+    display: none;
+}
+
+.preorder-site .background {
+    position: relative;
+    height: 40vh;
+    animation: background .5s 0s forwards linear;
+    background-position: center !important;
+    background-repeat: no-repeat;
+}
+
+.buynow h3 {
+    color: white;
+    font-size: 1.5em;
+    letter-spacing: 5px;
+    margin: 0;
+    padding: -10px 0px;
+    transition: .3s ease-out;
+}
+
+.buynow .text {
+    height: 600px;
+}
+
+.buynow .text img {
+    width: 300px;
+}
+
+.buynow .text p {
+    font-size: 18px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.buynow .text:hover {
+    background-color: #ffffff15;
+}
+
+.buynow .membership {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+.text button {
+    margin: 0px 30px;
+    padding: 15px 60px;
+    background-color: #ff9100;
+    color: black;
+    text-decoration: none;
+    font-size: 30px;
+    border: 1px solid transparent;
+    transition: .4s;
+    outline-width: 0px;
+    outline-offset: 0px;
+    cursor: pointer;
+    font-family: "Overpass";
+}
+
+.text button:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid #ff9100;
+}
+
+.membership button {
+    padding: 15px 20px;
+    font-size: 20px;
+    background-color: #ff9100;
+    color: black;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: .4s;
+}
+
+.membership button:hover {
+background-color: black;
+color: white;
+border: 1px solid #ff9100;
+}
+
+
+
+/* Alert */
+
+.alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000a1;
+    z-index: 20;
+}
+
+.alert div {
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    border: 3px solid #ff9100;
+    z-index: 30;
+}
+
+.alert h2 {
+    color: white;
+    font-size: 4em;
+    padding: 50px 0px;
+    padding-bottom: 0px;
+}
+
+.alert p {
+    font-size: 2em;
+}
+
+.alert-on {
+    display: flex;
+}
+
+
+/* Animace */
+
+@keyframes overlay {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes nadpis {
+    from {
+        transform: translateX(-150%);
+    }
+    to {
+        transform: translateX(-0%);
+    }
+}
+
+@keyframes stroke1 {
+    0% {
+        bottom: -37%;
+        opacity: 0;
+    }
+    12% {
+        bottom: -75%;
+        opacity: .4;
+    }
+    100% {
+        bottom: -75%;
+        opacity: .4;
+    }
+}
+
+@keyframes stroke2 {
+    0% {
+        bottom: -49%;
+        opacity: 0;
+    }
+    12% {
+        bottom: -115%;
+        opacity: .2;
+    }
+    100% {
+        bottom: -115%;
+        opacity: .2;
+    }
+}
+
+@keyframes button {
+    0% {
+        width: 0%;
+    }
+    50% {
+        top: 50%;
+        transform: translateY(-0%);
+        width: 100%;
+        height: 2px;
+    }
+    100% {
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@keyframes menu {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(-0%);
+        opacity: 1;
+    }
+}
+
+@keyframes scroll {
+    from {
+        bottom: 10%;
+        opacity: 0;
+    }
+    50% {
+        opacity: .2;
+    }
+    to {
+        bottom: 5%;
+        opacity: 1;
+    }
+}
+
+@keyframes scroll2 {
+    0% {
+        opacity: .5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: .5;
+    }
+}
+
+@keyframes background {
+    0% {
+        background-image: none;
+    }
+    100% {
+        background-image: url(../img/background.jpg);
+    }
+}
+
+@keyframes video {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
