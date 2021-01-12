@@ -22,31 +22,15 @@ body > div {
     display: none;
 }
 
-.video, video {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-}
-
-video {
-    width: 100vw;
-    opacity: 1;
-    animation: video .5s 29s forwards linear;
-}
-
 .background {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100vh;
     background-position: center;
     background-image: none;
-    background-size: contain;
+    background-size: cover;
     overflow: hidden;
-    animation: background .5s 28.5s forwards linear;
+    background-image: url(../img/background.jpg);
+    background-repeat: no-repeat;
 }
 
 .overlay {
@@ -63,15 +47,6 @@ video {
     opacity: 0;
     animation: overlay 1s linear forwards;
     z-index: 10;
-}
-
-.overlay div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-    overflow: hidden;
 }
 
 .overlay h1 {
@@ -233,6 +208,12 @@ section {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.video-main iframe {
+    width: 100%;
+    height: 600px;
+    margin-top: 100px;
 }
 
 section h2 {
@@ -672,4 +653,454 @@ border: 1px solid #ff9100;
     100% {
         opacity: 0;
     }
+}
+
+
+
+@media only screen and (max-width: 1050px) {
+
+    .overlay h1 {
+        letter-spacing: 20px;
+        font-size: 5em;
+    }
+    
+    .overlay h2 {
+        letter-spacing: 5px;
+        font-size: 1.2em;
+    }
+    
+    .scroll img {
+        height: 40px;
+        width: 40px;
+    }    
+
+    .menu {
+        position: fixed;
+        width: 100vw;
+    }
+    
+    .menu > a {
+        padding: 30px 30px;
+        margin-left: 50px;
+    }
+    
+    .menu ul {
+        margin-right: 50px;
+    }
+        
+    .menu ul li a {
+        padding: 35px 30px;
+    }
+    
+    .menu a {
+        font-size: 1.2em;
+    }
+    
+    section {
+        max-width: 90%;
+        width: 100%;
+    }
+    
+    .video-main iframe {
+        width: 100%;
+        height: 500px;
+        margin-top: 100px;
+    }
+    
+    section h2 {
+        font-size: 2.5em;
+        padding: 20px 0px;
+    }
+        
+    .content img {
+        max-width: 50%;
+        width: 100%;
+    }
+    
+    .content .text {
+        max-width: 50%;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .content .text p {
+        font-size: 15px;
+        line-height: 30px;
+        max-width: 80%;
+    }
+    
+    #preorder .text > .orange {
+        font-weight: 700;
+        color: #ff9100;
+        font-size: 30px;
+        line-height: 10px;
+    }
+    
+    .text a {
+        padding: 15px 40px;
+        font-size: 20px;
+    }    
+
+    
+    footer {
+        padding-bottom: 10vh;
+    }
+
+    footer h2 {
+        font-size: 2.5em;
+        padding: 30px 0px;
+    }
+
+    .forms {
+        width: 90%;
+        justify-content: space-around;
+    }
+
+    .form div {
+        width: 50%;
+    }
+
+    .forms input, .forms textarea {
+        width: 300px;
+        height: 30px;
+        margin-top: 20px;
+        font-size: 17px;
+    }
+
+    .forms textarea {
+        height: 100px;
+    }
+
+    .forms input::placeholder, .forms textarea::placeholder {
+        font-size: 15px;
+    }
+
+    .forms a {
+        margin-top: 40px;
+        padding: 10px 20px;
+        font-size: 18px;
+        border: 1px solid transparent;
+    }
+
+}
+
+
+@media only screen and (max-width: 770px) {
+
+    .overlay h1 {
+        letter-spacing: 30px;
+        font-size: 4em;
+    }
+    
+    .overlay h2 {
+        letter-spacing: 5px;
+        font-size: 1.2em;
+    }
+    
+    .scroll img {
+        height: 40px;
+        width: 40px;
+    }    
+
+    .menu {
+        position: fixed;
+        top: -35%;
+        width: 100vw;
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: .3s;
+    }
+
+    .open {
+        top: 0%;
+        transition: .3s;
+    }
+        
+    .menu ul {
+        margin-right: 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+        
+    .menu ul li a {
+        font-size: 1.5em;
+        margin: 0;
+        padding: 10px 10px;
+    }
+
+    .menu li, .menu > a {
+        margin-bottom: 15px;
+    }
+    
+    .menu a {
+        font-size: 1.5em;
+        margin: 0;
+        padding: 10px 10px;
+        margin-top: 20px;
+    }
+
+    .opener {
+        position: relative;
+        margin-top: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        width: 20vw;
+        height: 15px;
+    }
+
+    .opener span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        content: "";
+    }
+    
+    section {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .video-main iframe {
+        width: 100%;
+        height: 500px;
+        margin-top: 100px;
+    }
+    
+    section h2 {
+        font-size: 2em;
+        padding: 20px 0px;
+    }
+        
+    .content img {
+        max-width: 50%;
+        width: 100%;
+    }
+    
+    .content .text {
+        max-width: 50%;
+        width: 90%;
+        height: 100%;
+    }
+    
+    .content .text p {
+        font-size: 15px;
+        line-height: 22.5px;
+        max-width: 80%;
+    }
+    
+    #preorder .text > .orange {
+        font-weight: 700;
+        color: #ff9100;
+        font-size: 30px;
+        line-height: 10px;
+    }
+    
+    .text a {
+        padding: 15px 40px;
+        font-size: 20px;
+    }    
+
+    
+    footer {
+        padding-bottom: 10vh;
+    }
+
+    footer h2 {
+        font-size: 2em;
+        padding: 30px 0px;
+    }
+
+    .forms {
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .forms div {
+        margin-bottom: 100px;
+    }
+
+    .forms input, .forms textarea {
+        width: 400px;
+        height: 30px;
+        margin-top: 20px;
+        font-size: 17px;
+    }
+
+    .forms textarea {
+        height: 100px;
+    }
+
+    .forms input::placeholder, .forms textarea::placeholder {
+        font-size: 15px;
+    }
+
+    .forms a {
+        margin-top: 40px;
+        padding: 10px 20px;
+        font-size: 18px;
+        border: 1px solid transparent;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+    .overlay h1 {
+        letter-spacing: 20px;
+        font-size: 2.5em;
+    }
+    
+    .overlay h2 {
+        letter-spacing: 5px;
+        font-size: 0.9em;
+    }
+    
+    .scroll img {
+        height: 40px;
+        width: 40px;
+    }    
+
+    .menu {
+        position: fixed;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+        
+    .menu ul {
+        margin-right: 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+        
+    .menu ul li a {
+        font-size: 1.5em;
+        margin: 0;
+        padding: 10px 10px;
+    }
+
+    .menu li, .menu > a {
+        margin-bottom: 15px;
+    }
+    
+    .menu a {
+        font-size: 1.5em;
+        margin: 0;
+        padding: 10px 10px;
+        margin-top: 20px;
+    }
+    
+    section {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .video-main iframe {
+        width: 100%;
+        height: 500px;
+        margin-top: 100px;
+    }
+    
+    section h2 {
+        font-size: 2em;
+        padding: 20px 0px;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+        
+    .content img {
+        max-width: 90%;
+        width: 100%;
+    }
+    
+    .content .text {
+        max-width: 90%;
+        width: 90%;
+        height: 100%;
+        text-align: justify;
+    }
+    
+    .content .text p {
+        font-size: 15px;
+        line-height: 22.5px;
+        max-width: 80%;
+    }
+
+    #preorder img {
+        display: none;
+    }
+    
+    #preorder .text > .orange {
+        font-weight: 700;
+        color: #ff9100;
+        font-size: 30px;
+        line-height: 10px;
+    }
+    
+    .text a {
+        padding: 15px 40px;
+        font-size: 20px;
+    }    
+
+    
+    footer {
+        margin-top: 10vh;
+        padding-bottom: 10vh;
+    }
+
+    footer h2 {
+        font-size: 2em;
+        padding: 30px 0px;
+    }
+
+    .forms {
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .forms div {
+        margin-bottom: 100px;
+        width: 90%;
+    }
+
+    .forms input, .forms textarea {
+        width: 100%;
+        height: 30px;
+        margin-top: 20px;
+        font-size: 17px;
+    }
+
+    .forms textarea {
+        height: 100px;
+    }
+
+    .forms input::placeholder, .forms textarea::placeholder {
+        font-size: 15px;
+    }
+
+    .forms a {
+        margin-top: 40px;
+        padding: 10px 20px;
+        font-size: 18px;
+        border: 1px solid transparent;
+    }
+
 }

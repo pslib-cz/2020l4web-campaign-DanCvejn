@@ -1,3 +1,10 @@
+// Menu opener
+
+$('.opener').click(function(){
+    $('.menu').toggleClass('open');
+})
+
+
 // Buy now
 
 $('.silly').click(function(){
